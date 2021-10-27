@@ -8,7 +8,7 @@ class Pub:
         self.till += drink.price
 
     def can_drink(self, customer):
-        if customer.age >= 18: 
+        if customer.age >= 18 and customer.drunkness <= 5:
             return True
          
         return False

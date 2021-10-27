@@ -21,8 +21,19 @@ class TestPub(unittest.TestCase):
 
     def test_customer_can_drink_true(self):
         customer = Customer("ted", 50, 18)
+        drink = Drink("beer", 5)
+        customer.buy_drink(self.pub, drink)
+        customer.buy_drink(self.pub, drink)
+        customer.buy_drink(self.pub, drink)
         self.assertEqual(True, self.pub.can_drink(customer))
 
     def test_customer_can_drink_false(self):
         customer2 = Customer("Angela", 50, 17)
+        drink = Drink("beer", 5)
+        customer2.buy_drink(self.pub, drink)
+        customer2.buy_drink(self.pub, drink)
+        customer2.buy_drink(self.pub, drink)
+        customer2.buy_drink(self.pub, drink)
+        customer2.buy_drink(self.pub, drink)
+        customer2.buy_drink(self.pub, drink)
         self.assertEqual(False, self.pub.can_drink(customer2))

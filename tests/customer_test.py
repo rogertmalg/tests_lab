@@ -1,6 +1,8 @@
 import unittest 
 
+from src.pub import Pub
 from src.customer import Customer
+from src.drink import Drink
 
 class TestCustomer(unittest.TestCase):
     def setUp(self):
@@ -11,3 +13,14 @@ class TestCustomer(unittest.TestCase):
         
     def test_customer_has_wallet(self):
         self.assertEqual(50, self.customer.wallet)
+    
+    def test_buy_drink(self):
+        pub = Pub("Spoons", 500)
+        drink = Drink("beer", 5)
+        self.customer.buy_drink(pub, drink)
+        self.assertEqual(45, self.customer.wallet)
+        self.assertEqual(505, pub.till)
+
+    
+           
+

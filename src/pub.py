@@ -6,3 +6,9 @@ class Pub:
 
     def sell_drink(self, drink):
         self.till += drink.price
+
+    def can_drink(self, customer):
+        if customer.age >= 18: 
+            return True
+         
+        return False
